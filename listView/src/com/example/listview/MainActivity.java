@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		listview=(ListView) findViewById(R.id.listView);
 		
+		
 		//String [] planets=this.getResources().getStringArray(R.array.Planetsarray); 
 		
 		ArrayAdapter Adapter = new ArrayAdapter(this,R.array.Planetsarray);
