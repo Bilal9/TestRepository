@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Planetsarray">
+        <item >Planet of the solar system</item>
+        <item>Mercury</item>
+<item>Venus </item>
+<item>Earth</item>
+<item>Mars </item>
+<item>Jupiter</item>
+<item>Saturn</item>
+<item>uranus</item>
+<item>neptune</item>
+<item>pluto</item>
+        
+    </string-array>
+    
+</resources>
