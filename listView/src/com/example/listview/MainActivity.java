@@ -54,4 +54,14 @@ public class MainActivity extends Activity {
 		}
 		
 	}
+	
+	private class Planetadapter extends ArrayAdapter<String>
+	{
+		public Planetadapter(Context context, int textViewResuorceId)
+		{
+			super(context,textViewResuorceId);
+		}
+		
+		
+	}
 }
