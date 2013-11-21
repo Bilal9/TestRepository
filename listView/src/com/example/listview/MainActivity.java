@@ -4,8 +4,10 @@ import android.R.string;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -18,6 +20,7 @@ public class MainActivity extends Activity {
 	ListView listview; 
 	String[] planets;
 	Context context;
+	LayoutInflater inflater;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,7 +31,7 @@ public class MainActivity extends Activity {
 		
 	 planets=this.getResources().getStringArray(R.array.Planetsarray); 
 		
-		ArrayAdapter<String> Adapter = new ArrayAdapter<String>(this,R.layout.listviewrow,R.id.TextView, planets);
+	 Planetadapter Adapter = new Planetadapter(this,R.layout.listviewrow,R.id.TextView,planets);
 		listview.setAdapter(Adapter);
 		listview.setOnItemClickListener(new ClickListHander());
 	}
@@ -57,9 +60,40 @@ public class MainActivity extends Activity {
 	
 	private class Planetadapter extends ArrayAdapter<String>
 	{
-		public Planetadapter(Context context, int textViewResuorceId)
+		private String[] planets;
+	
+	
+		public Planetadapter(Context context,int Resource,int textViewResuorceId,String[] planets )
 		{
-			super(context,textViewResuorceId);
+			super(context,Resource,textViewResuorceId,planets);
+			this.planets= planets;
+		
+		}
+
+		@Override
+		public View getView(int position, View view, ViewGroup parent) {
+			
+			  View row;
+			LayoutInflater inflater=getLayoutInflater();
+			
+		//	row=inflater.inflate(R.layout.listviewrow, parent, false);
+			
+			
+			if(position%2==0){ 
+				View viewleft=inflater.inflate(R.layout.listviewrow,parent,false);
+				row=viewleft;
+			}
+			else{
+				View viewright=inflater.inflate(R.layout.listview_right,parent,false);
+				row=viewright;	
+			}
+			String planetName= planets[position];
+					
+			TextView Label=(TextView)row.findViewById(R.id.TextView);	
+
+			Label.setText(planetName);
+		
+			return row;
 		}
 		
 		
