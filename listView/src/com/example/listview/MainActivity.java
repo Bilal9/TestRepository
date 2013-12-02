@@ -7,6 +7,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -61,7 +62,7 @@ public class MainActivity extends Activity {
 	private class Planetadapter extends ArrayAdapter<String>
 	{
 		private String[] planets;
-	
+		listTextClickListener Listener=new listTextClickListener();
 	
 		public Planetadapter(Context context,int Resource,int textViewResuorceId,String[] planets )
 		{
@@ -90,12 +91,24 @@ public class MainActivity extends Activity {
 			String planetName= planets[position];
 					
 			TextView Label=(TextView)row.findViewById(R.id.TextView);	
-
+			Label.setOnClickListener(Listener);
 			Label.setText(planetName);
 		
 			return row;
 		}
 		
+		private class listTextClickListener implements OnClickListener
+		{
+
+			@Override
+			public void onClick(View view)
+			{
+			TextView Clicked=(TextView) view;
+			Toast.makeText(context,Clicked.getText().toString() +" Text Clicked",Toast.LENGTH_SHORT).show();	
+			}
+			
+			
+		}
 		
 	}
 }
