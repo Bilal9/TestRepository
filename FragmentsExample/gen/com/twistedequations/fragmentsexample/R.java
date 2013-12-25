@@ -29,13 +29,14 @@ public final class R {
     }
     public static final class id {
         public static final int DetialsText=0x7f090000;
-        public static final int ElementsList=0x7f090002;
-        public static final int Elements_text_listtext=0x7f090003;
-        public static final int FrameLayout1=0x7f090001;
-        public static final int LinearLayout1=0x7f090004;
-        public static final int action_settings=0x7f090007;
-        public static final int fragment1=0x7f090005;
-        public static final int inoFrame=0x7f090006;
+        public static final int ElementsDetailFrame=0x7f090001;
+        public static final int ElementsList=0x7f090003;
+        public static final int Elements_text_listtext=0x7f090004;
+        public static final int FrameLayout1=0x7f090002;
+        public static final int LinearLayout1=0x7f090005;
+        public static final int action_settings=0x7f090008;
+        public static final int fragment1=0x7f090006;
+        public static final int inoFrame=0x7f090007;
     }
     public static final class layout {
         public static final int elements_detail_fragments=0x7f030000;
@@ -43,6 +44,7 @@ public final class R {
         public static final int elements_list_fragments=0x7f030002;
         public static final int elemients_list_row=0x7f030003;
         public static final int main_activity=0x7f030004;
+        public static final int multiplefrag=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f080000;
